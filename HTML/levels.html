@@ -5,17 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    *{
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+        background:linear-gradient(135deg , #3a1c71,#6a0dad,#9b59b6);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
+
+    .container{
+        text-align: center;
+    }
+
+    h1{
+        font-size: 100px;
+        letter-spacing: 2px;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        margin-bottom: 10px;
+    }
+
+    h2{
+        font-weight: 400;
+        font-size: 25px;
+        margin-bottom: 40px;
+        color: #f6f3f8;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        text-align: center;
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    button{
+        background: #8e44ad;
+        color: #fff;
+        border: none;
+        padding: 20px 50px;
+        border-radius: 50px;
+        font-size: 30px;
+        cursor: pointer;
+        transition: all 0.4 ease;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    button:hover{
+        background: #732d91;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+</style>
 <body>
-    <h1>Memory Flash Card</h1>
-    <h2 >Select your preferred difficulty level (Easy, Medium, or Hard)</h2>    
-    <a href="Easy.html">
-        <button>Easy</button>
-    </a>
-    <a href="Medium.html">
-        <button>Medium</button>
-    </a>
-    <a href="Hard.html">
-        <button>Hard</button>
-    </a>
+    <div id="container">
+        <h1>Memory Flash Card</h1>
+        <h2 >Select your preferred difficulty level (Easy, Medium, or Hard)</h2>    
+        <div class="buttons">
+            <a href="Easy.html">
+                <button>Easy</button>
+            </a>
+            <a href="Medium.html">
+                <button>Medium</button>
+            </a>
+            <a href="Hard.html">
+                <button>Hard</button>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
