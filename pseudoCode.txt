@@ -1,0 +1,40 @@
+Getting Started for Players
+Open the Game
+
+Launch the Memory Flash Card app on your device.
+
+Choose a difficulty level (Easy, Medium, Hard).
+
+Click Start to begin your memory challenge.
+
+Flip the Cards
+
+Tap or click on a card to flip it.
+
+Flip a second card to try and find its matching pair.
+
+Remember the card positions to improve your chances!
+
+Match the Pairs
+
+If the two cards match, they remain face up.
+
+If they do not match, they flip back after a short delay.
+
+Stay focused and keep track of previously revealed cards.
+
+Watch the Timer & Score
+
+Complete the level before time runs out.
+
+Fewer moves = higher score.
+
+Try to beat your best time!
+
+Win the Game
+
+Match all card pairs to win the round.
+
+Your final score is displayed at the end.
+
+Challenge yourself to replay and improve your performance!
