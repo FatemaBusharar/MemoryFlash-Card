@@ -1,4 +1,4 @@
-console.log('Hello Game started')
+console.log('Hello Game started Easy level')
 
 const cardsImages = [
 '../Easy/1.jpg',
