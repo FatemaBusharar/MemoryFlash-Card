@@ -8,6 +8,29 @@
     <title>Memory Flash Card</title>
 </head>
 <body>
-    
+    <h1>Memory Flash Card</h1>
+    <h2 >Select your preferred difficulty level (Easy, Medium, or Hard)</h2>
+    <div class="playerInfo">
+        <div class="playerStatus">
+            <div class="Moves"> Moves : 0</div>
+            <div class="Time"> Time : 0 seconds</div>
+            <div class="Matches"> Matches : 0 / 12</div>
+            <div class="Score"> Score : 0</div>
+        </div>
+        <div class="gameBoard"></div>
+        <div class="playerContrrol">
+            <button id="startBtn">Start Game</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div class="WinModel" style="display: none;">
+            <h2>Winner</h2>
+            <p>
+                Moves : <span id="lastMove"></span><br>
+                Time : <span id="finishTime"></span><br>
+                Score : <span id="LastScore"></span>
+            </p>
+            <button onclick="nextLevel()">Next level</button>
+        </div>
+    </div>
 </body>
 </html>
