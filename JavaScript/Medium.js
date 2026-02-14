@@ -31,6 +31,9 @@ const lastMove = document.getElementById('lastMove')
 const finishTime = document.getElementById('finishTime')
 const lastScore = document.getElementById('lastScore')
 
+startBtn.addEventListener('click',startGame)
+resetBtn.addEventListener('click',resetGame)
+
 function startGame(){
 
     // clear game from any prev memoryCard
@@ -59,7 +62,7 @@ function startGame(){
     timer = setInterval(updateTimer,1000)
 
     // duplicate cardImage , card shuffle randomly
-    let memoryCards = [cardsImages , cardsImages]
+    let memoryCards = [...cardsImages , ...cardsImages]
     memoryCards.sort(()=> Math.random()-0.5)
 
     // loop to create , store and two side of card 
@@ -72,7 +75,7 @@ function startGame(){
         <div class="cardFront"></div>
         <div class="cardBack"><img src="${imgCard}"></div>`
 
-        memoryCard.addEventListener('click',flipCard)
+        memoryCard.addEventListener('click',flipMCard)
         board.appendChild(memoryCard)
     })
 
@@ -83,7 +86,7 @@ function startGame(){
 function flipMCard(){
 
     if (!gameStarted) return
-    if(!canCFlip) return
+    if(!cardFlip) return
 
     // if the card already flip
     if(this.classList.contains('MCardflipped')) return
@@ -99,7 +102,7 @@ function flipMCard(){
 
     // to set the card , lock flip and count moves
     secondCard = this
-    canCFlip = false
+    cardFlip = false
     moves++
 
     checkCardMatch()
@@ -116,7 +119,7 @@ function checkCardMatch(){
         resetCard()
 
         // to end game if all mathched
-        if(matches==cardsImages.length){
+        if(matches === cardsImages.length){
             endGame()
         }
     }
@@ -130,6 +133,7 @@ function checkCardMatch(){
         },800)
     }
 }
+
 function resetCard(){
     firstCard = null
     secondCard = null

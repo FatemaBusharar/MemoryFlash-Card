@@ -7,57 +7,72 @@
     <title>Memory Flash Card</title>
 </head>
 <style>
-    *{
-        box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-    }
+* { 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+} 
+body { 
+    color:#fff;
+    background: linear-gradient(135deg, #3a1c71, #6a0dad, #9b59b6); 
+    background-size: 300% 300%;
+    animation: bgMove 12s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    filter: saturate(0.9);
 
-    body {
-        background:linear-gradient(135deg , #3a1c71,#6a0dad,#9b59b6);
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
+} 
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.container{
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
     }
-
-    .container{
-        text-align: center;
+    to{
+        opacity: 1;
+        transform: translateY(0);
     }
-
-    h1{
-        font-size: 100px;
-        letter-spacing: 2px;
-        text-shadow: 0 4px 10px rgba(0,0,0,0.4);
-        margin-bottom: 10px;
-    }
-
-    h2{
-        font-weight: 400;
-        font-size: 25px;
-        margin-bottom: 40px;
-        color: #f6f3f8;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-
-    button{
-        background: #8e44ad;
-        color: #fff;
-        border: none;
-        padding: 20px 50px;
-        border-radius: 50px;
-        font-size: 25px;
-        cursor: pointer;
-        transition: all 0.4 ease;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-    button:hover{
-        background: #732d91;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    }
-
+}
+h1{
+    font-size: 100px;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    margin-bottom: 10px;
+}
+h2{
+    font-weight: 400;
+    font-size: 25px;
+    margin-bottom: 40px;
+    color: #f6f3f8;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+button { 
+    background: linear-gradient(45deg, #ff7eb3, #7afcff);
+    color: #fff; 
+    border: none; 
+    padding: 12px 30px; 
+    border-radius: 25px; 
+    font-size: 1.8rem; 
+    cursor: pointer; 
+    margin: 10px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3); 
+} 
+button:hover { 
+    background: linear-gradient(45deg, #ff7eb3, #7afcff);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+} 
 </style>
 <body>
     <div class="container">
