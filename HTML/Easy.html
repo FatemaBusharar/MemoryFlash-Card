@@ -14,15 +14,15 @@
         <div class="playerStatus">
             <div > Moves : <span id="Moves"> 0 </span></div>
             <div > Time : <span id="Time">  0 seconds </span></div>
-            <div > Matches : <span id="Matches">  0 </span> / 4 </div>
+            <div > Matches : <span id="Matches">  0 </span> </div>
             <div > Score : <span id="Score"> 0 </span></div>
         </div>
-        <div class="gameBoard"></div>
-        <div class="playerContrrol">
+        <div class="gameBoard" id="gameBoard"></div>
+        <div class="playerContrrol" id="playerContrrol">
             <button id="startBtn">Start Game</button>
             <button id="resetBtn">Reset</button>
         </div>
-        <div class="WinModel" style="display: none;">
+        <div id="WinModel" style="display: none;">
             <h2>Winner</h2>
             <p>
                 Moves : <span id="lastMove"></span><br>

@@ -133,3 +133,54 @@ function checkCardMatch(){
         },800)
     }
 }
+
+function resetCard(){
+    firstCard = null
+    secondCard = null
+    cardFlip = true
+    updateCard()
+}
+
+function updateTimer(){
+    seconds++
+    updateCard()
+}
+
+function updateCard(){
+    movesE.textContent = moves
+    matchesE.textContent = matches + ' / ' + cardsImages.length
+    scoreE.textContent = score
+
+    const minute = Math.floor(seconds/60)
+    const second = seconds % 60 
+
+    timeE.textContent = minute + ':' + (second<10 ? '0':'') +second
+}
+
+function endGame(){
+    clearInterval(timer)
+    gameStarted = false
+
+    if(!lastMove || !finishTime || !lastScore || !winModel) return
+    lastMove.textContent = moves
+    finishTime.textContent = timeE.textContent
+    lastScore.textContent = score
+
+    winModel.style.display='block'
+
+}
+
+function resetGame(){
+    clearInterval(timer)
+
+    seconds = 0
+    moves = 0
+    matches = 0
+    score = 0
+
+    updateCard()
+
+    winModel.style.display = 'none'
+    startGame()
+}
+
