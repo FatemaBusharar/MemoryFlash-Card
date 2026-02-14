@@ -10,7 +10,6 @@ const cardsImages = [
 '../Hard/7.jpg',
 '../Hard/8.jpg',
 '../Hard/9.jpg',
-
 ]
 
 let firstCard = null
