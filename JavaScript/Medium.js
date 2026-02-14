@@ -79,3 +79,54 @@ function startGame(){
     updateCard()
 
 }
+
+function flipMCard(){
+
+    if (!gameStarted) return
+    if(!canCFlip) return
+
+    // if the card already flip
+    if(this.classList.contains('MCardflipped')) return
+
+    // to flip select card
+    this.classList.add('MCardflipped')
+
+    // to store the card and wait 
+    if(!firstCard){
+        firstCard = this
+        return
+    }
+
+    // to set the card , lock flip and count moves
+    secondCard = this
+    canCFlip = false
+    moves++
+
+    checkCardMatch()
+    updateCard()
+
+}
+
+function checkCardMatch(){
+
+    // two card match
+    if(firstCard.dataset.image === secondCard.dataset.image){
+        matches++
+        score += 10
+        resetCard()
+
+        // to end game if all mathched
+        if(matches==cardsImages.length){
+            endGame()
+        }
+    }
+    else {
+        // subtract point "not below 0" and flip back after
+        score = Math.max(0 , score-2)
+        setTimeout(()=>{
+            firstCard.classList.remove('MCardflipped')
+            secondCard.classList.remove('MCardflipped')
+            resetCard()
+        },800)
+    }
+}
