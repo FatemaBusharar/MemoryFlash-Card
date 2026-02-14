@@ -33,3 +33,52 @@ const winModel = document.getElementById('winModel')
 const lastMove = document.getElementById('lastMove')
 const finishTime = document.getElementById('finishTime')
 const lastScore = document.getElementById('lastScore')
+
+function startGame(){
+
+    // clear game from any prev memoryCard
+    board.innerHTML=''
+
+    // reset slected card 
+    firstCard = null
+    secondCard = null
+
+    // reset game value
+    moves = 0
+    matches = 0
+    score = 0
+    seconds = 0
+
+    // to card flip
+    cardFlip = true
+
+    // to game start
+    gameStarted = true
+
+    // reset timer
+    clearInterval(timer)
+
+    // start new timer 
+    timer = setInterval(updateTimer,1000)
+
+    // duplicate cardImage , card shuffle randomly
+    let memoryCards = [cardsImages , cardsImages]
+    memoryCards.sort(()=> Math.random()-0.5)
+
+    // loop to create , store and two side of card 
+    memoryCards.forEach((imgCard)=>{
+        const memoryCard = document.createElement('div')
+        memoryCard.className = 'memoryCard'
+        memoryCard.dataset.image = imgCard
+
+        memoryCard.innerHTML=`
+        <div class="cardFront"></div>
+        <div class="cardBack"><img src="${imgCard}"></div>`
+
+        memoryCard.addEventListener('click',flipCard)
+        board.appendChild(memoryCard)
+    })
+
+    updateCard()
+
+}
