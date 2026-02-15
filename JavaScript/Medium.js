@@ -93,7 +93,6 @@ function startGame(){
 
 function flipMCard(){
 
-    if (!gameStarted) return
     if(!cardFlip) return
 
     // if the card already flip
@@ -161,13 +160,15 @@ function updateTimer(){
 }
 
 function updateCard(){
+
+    // Update moves and matches and score 
     movesE.textContent = moves
     matchesE.textContent = matches + ' / ' + cardsImages.length
     scoreE.textContent = score
 
+    // Convert seconds to minute:second format
     const minute = Math.floor(seconds/60)
     const second = seconds % 60 
-
     timeE.textContent = minute + ':' + (second<10 ? '0':'') +second
 }
 

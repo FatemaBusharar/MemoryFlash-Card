@@ -89,8 +89,6 @@ function startGame(){
 }
 
 function flipMCard(){
-
-    if (!gameStarted) return
     if(!cardFlip) return
 
     // if the card already flip
