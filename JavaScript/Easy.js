@@ -28,6 +28,14 @@ const lastMove = document.getElementById('lastMove')
 const finishTime = document.getElementById('finishTime')
 const lastScore = document.getElementById('lastScore')
 
+const winSound = new Audio('../Sounds/win.mp3')
+const scoreUp = new Audio('../Sounds/scoreUp.mp3')
+const scoreDown = new Audio('../Sounds/scoreDown.mp3')
+
+winSound.volume = 0.5
+scoreUp.volume = 0.5
+scoreDown.volume = 0.5
+
 startBtn.addEventListener('click',startGame)
 resetBtn.addEventListener('click',resetGame)
 
@@ -113,6 +121,9 @@ function checkCardMatch(){
     if(firstCard.dataset.image === secondCard.dataset.image){
         matches++
         score += 10
+        scoreUp.currentTime = 0
+        scoreUp.play()
+
         resetCard()
 
         // to end game if all mathched
@@ -123,6 +134,9 @@ function checkCardMatch(){
     else {
         // subtract point "not below 0" and flip back after
         score = Math.max(0 , score-2)
+        scoreDown.currentTime = 0
+        scoreDown.play()
+        
         setTimeout(()=>{
             firstCard.classList.remove('MCardflipped')
             secondCard.classList.remove('MCardflipped')
@@ -164,7 +178,9 @@ function endGame(){
     lastMove.textContent = moves
     finishTime.textContent = timeE.textContent
     lastScore.textContent = score
-
+    
+    winSound.currentTime = 0
+    winSound.play()
     winModel.style.display='block'
 
 }
