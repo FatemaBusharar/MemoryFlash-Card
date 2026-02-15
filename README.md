@@ -42,16 +42,19 @@
 ![Start Page](Screenshots/Start.png)
 
 #### levels Page
-![levels Page](Screenshots/levels.png)
+![levels Page](Screenshots/level.png)
 
 #### Easy level Page
-![Easy level Page]()
+![Easy level Page](Screenshots/Easy.png)
 
 #### Medium level Page
-![Medium level Page]()
+![Medium level Page](Screenshots/Medium.png)
 
 #### Hard level Page
-![Hard level Page]()
+![Hard level Page](Screenshots/Hard.png)
+
+#### win Page
+![win Page](Screenshots/win.png)
 
 ### ***Future Updates***
 - [ ] More Difficulty Levels – Add Extreme mode with larger grids.
